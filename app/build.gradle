@@ -91,7 +91,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
 
-    ////Mapping///
+    //// MAPPING ////
     implementation 'com.github.yanneckreiss.kconmapper:annotations:1.0.0-alpha04'
     ksp 'com.github.yanneckreiss.kconmapper:ksp:1.0.0-alpha04'
 }

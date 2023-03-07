@@ -3,9 +3,10 @@ package de.yanneckreiss.workmanager_sample_project.domain.worker.sync_animals
 import androidx.work.*
 import de.yanneckreiss.workmanager_sample_project.domain.worker.sync_animals.SyncAnimalsWorker.Companion.UNIQUE_WORK_NAME
 import org.koin.core.annotation.Factory
+import java.util.concurrent.TimeUnit
 
 @Factory
-class ScheduleSyncAnimalsScheduler(
+class ScheduleSyncAnimalsWorker(
  private val workManager: WorkManager
 ) {
 
@@ -19,6 +20,10 @@ class ScheduleSyncAnimalsScheduler(
             .setConstraints(constraints)
             .build()
 
-        workManager.enqueueUniqueWork(UNIQUE_WORK_NAME, ExistingWorkPolicy.APPEND_OR_REPLACE, syncAnimalsWorkRequest)
+        workManager.enqueueUniqueWork(
+            UNIQUE_WORK_NAME,
+            ExistingWorkPolicy.APPEND_OR_REPLACE,
+            syncAnimalsWorkRequest
+        )
     }
 }
